@@ -1,2 +1,3 @@
-2025/12/06-19:28:44.027 6ad0 Creating DB D:\Documents\ProyectoCibertec\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB since it was missing.
-2025/12/06-19:28:44.471 6ad0 Reusing MANIFEST D:\Documents\ProyectoCibertec\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB/MANIFEST-000001
+2025/12/07-16:13:05.481 5cc0 Reusing MANIFEST D:\Documents\ProyCibertec\backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB/MANIFEST-000001
+2025/12/07-16:13:05.483 5cc0 Recovering log #3
+2025/12/07-16:13:05.483 5cc0 Reusing old log D:\Documents\ProyCibertec\backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Sync Data\LevelDB/000003.log 
