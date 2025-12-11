@@ -2,6 +2,7 @@ package com.cibertec.pd.service;
 
 import com.cibertec.pd.dto.DenunciaCreateRequest;
 import com.cibertec.pd.dto.DenunciaDTO;
+import com.cibertec.pd.dto.DenunciaStatsDTO;
 
 import java.util.List;
 
@@ -14,4 +15,7 @@ public interface DenunciaService {
     List<DenunciaDTO> listarPorUsuario(Long usuarioId);
 
     void actualizarEstado(Long id, String estado);
+    
+    DenunciaStatsDTO obtenerStats();
+
 }

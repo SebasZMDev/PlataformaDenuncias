@@ -8,7 +8,9 @@ import java.util.List;
 public interface UsuarioService {
 
     UsuarioDTO obtenerPorId(Long id);
-
+    
+    UsuarioDTO obtenerPorEmail(String email);
+    
     List<UsuarioDTO> listar();
 
     Usuario crear(Usuario usuario);

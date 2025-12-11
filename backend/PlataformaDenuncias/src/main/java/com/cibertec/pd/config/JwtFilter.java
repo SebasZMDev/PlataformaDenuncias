@@ -3,17 +3,16 @@ package com.cibertec.pd.config;
 import com.cibertec.pd.service.AuthService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
@@ -32,37 +31,76 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI();
 
-        System.out.println("JWT Filter - Path: " + path);
-
-        if (path.startsWith("/api/auth")) {
+        if (path.startsWith("/api/auth") || path.startsWith("/api/denuncias/public")) {
             filterChain.doFilter(request, response);
             return;
         }
 
         String authHeader = request.getHeader("Authorization");
+        String token = null;
 
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            token = authHeader.substring(7);
+        } else {
+
+            if (request.getCookies() != null) {
+                for (Cookie c : request.getCookies()) {
+                    if ("token".equals(c.getName())) {
+                        token = c.getValue();
+                        break;
+                    }
+                }
+            }
+        }
+
+        // -----------------------------
+        // DEBUG COMPLETO
+        // -----------------------------
+        System.out.println("\n========= JWT DEBUG =========");
+        System.out.println("Request: " + request.getMethod() + " " + request.getRequestURI());
+        System.out.println("Authorization header: " + authHeader);
+
+        if (request.getCookies() != null) {
+            for (Cookie c : request.getCookies()) {
+                System.out.println("Cookie -> " + c.getName() + " = " + c.getValue());
+            }
+        } else {
+            System.out.println("Cookies: none");
+        }
+
+        System.out.println("Token seleccionado: [" + token + "]");
+        System.out.println("=============================\n");
+
+
+        if (token == null || token.trim().isEmpty()) {
+            System.out.println(">> TOKEN ES NULL O VACÍO - REQUEST SIN AUTH");
             filterChain.doFilter(request, response);
             return;
         }
 
-        String token = authHeader.substring(7);
-        String username = jwtUtils.extractUsername(token);
+        try {
+            String username = jwtUtils.extractUsername(token);
 
-        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            if (username != null &&
+                SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UserDetails userDetails = authService.loadUserByUsername(username);
+                var userDetails = authService.loadUserByUsername(username);
 
-            if (jwtUtils.validateToken(token)) {
-                UsernamePasswordAuthenticationToken authToken =
-                        new UsernamePasswordAuthenticationToken(
-                                userDetails,
-                                null,
-                                userDetails.getAuthorities()
-                        );
+                if (jwtUtils.validateToken(token)) {
+                    UsernamePasswordAuthenticationToken authToken =
+                            new UsernamePasswordAuthenticationToken(
+                                    userDetails,
+                                    null,
+                                    userDetails.getAuthorities()
+                            );
 
-                SecurityContextHolder.getContext().setAuthentication(authToken);
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
             }
+
+        } catch (Exception e) {
+            System.out.println("❌ ERROR PARSEANDO TOKEN:");
+            e.printStackTrace();
         }
 
         filterChain.doFilter(request, response);

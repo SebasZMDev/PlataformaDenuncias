@@ -5,6 +5,9 @@ import com.cibertec.pd.model.Usuario;
 import com.cibertec.pd.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +24,15 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.obtenerPorId(id));
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<UsuarioDTO> obtenerUsuarioActual(Authentication authentication) {
+        if (authentication == null) return ResponseEntity.ok(null);
+
+        String email = authentication.getName();
+        UsuarioDTO usuario = usuarioService.obtenerPorEmail(email);
+        return ResponseEntity.ok(usuario);
+    }
+    
     @GetMapping
     public ResponseEntity<List<UsuarioDTO>> listar() {
         return ResponseEntity.ok(usuarioService.listar());

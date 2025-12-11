@@ -2664,3 +2664,102 @@
 2025-12-07 16:28:07,694 [Worker-14: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-12-07 16:28:07,760 [Worker-14: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-12-07 16:28:07,773 [Worker-14: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-09 18:38:30,138 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-12-09 18:38:33,077 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-09 19:17:04,379 [Worker-28: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-09 19:17:04,411 [Worker-28: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-09 19:17:04,419 [Worker-28: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-09 19:18:15,149 [Worker-18: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-09 19:18:15,153 [Worker-18: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-09 19:18:15,159 [Worker-18: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 11:27:12,492 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-12-10 11:27:59,088 [Worker-0: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-10 11:49:47,511 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 11:49:47,579 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 11:49:47,601 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 12:26:41,168 [Worker-11: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 12:26:41,178 [Worker-11: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 12:26:41,185 [Worker-11: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 14:16:57,214 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 14:16:57,226 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 14:16:57,238 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 14:54:39,671 [Worker-0: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 14:54:39,684 [Worker-0: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 14:54:39,696 [Worker-0: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 15:18:03,951 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 15:18:03,962 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 15:18:03,970 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 16:03:23,382 [Worker-2: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 16:03:23,390 [Worker-2: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 16:03:23,398 [Worker-2: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 16:15:40,852 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 16:15:40,860 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 16:15:40,867 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 16:26:23,539 [Worker-4: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 16:26:23,550 [Worker-4: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 16:26:23,559 [Worker-4: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 16:42:33,622 [Worker-13: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 16:42:33,630 [Worker-13: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 16:42:33,638 [Worker-13: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 16:52:14,902 [Worker-19: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 16:52:14,913 [Worker-19: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 16:52:14,918 [Worker-19: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 17:49:53,157 [Worker-17: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 17:49:53,178 [Worker-17: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 17:49:53,184 [Worker-17: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 18:42:40,759 [Worker-18: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 18:42:40,792 [Worker-18: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 18:42:40,799 [Worker-18: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 18:44:26,961 [Worker-16: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 18:44:26,963 [Worker-16: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 18:44:26,967 [Worker-16: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 18:50:01,289 [Worker-17: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 18:50:01,292 [Worker-17: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 18:50:01,297 [Worker-17: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 18:51:31,173 [Worker-21: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 18:51:31,176 [Worker-21: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 18:51:31,181 [Worker-21: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 18:53:08,977 [Worker-23: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 18:53:08,980 [Worker-23: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 18:53:08,984 [Worker-23: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 20:04:54,195 [Worker-33: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 20:04:54,222 [Worker-33: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 20:04:54,231 [Worker-33: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 20:38:50,596 [Worker-33: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 20:38:50,603 [Worker-33: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 20:38:50,607 [Worker-33: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 21:27:48,240 [Worker-40: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 21:27:48,248 [Worker-40: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 21:27:48,254 [Worker-40: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 22:08:24,818 [Worker-52: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 22:08:24,825 [Worker-52: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 22:08:24,831 [Worker-52: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 22:19:40,917 [Worker-51: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 22:19:40,933 [Worker-51: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 22:19:40,941 [Worker-51: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 22:43:24,678 [Worker-55: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 22:43:24,686 [Worker-55: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 22:43:24,689 [Worker-55: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 22:44:56,792 [Worker-55: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 22:44:56,795 [Worker-55: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 22:44:56,799 [Worker-55: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 22:45:03,315 [Worker-58: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 22:45:03,317 [Worker-58: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 22:45:03,321 [Worker-58: Building Workspace] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-10 22:45:12,127 [Worker-56: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-10 22:45:12,132 [Worker-56: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-10 22:45:12,136 [Worker-56: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 08:28:12,653 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-12-11 08:28:18,761 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-11 09:52:23,102 [Worker-26: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 09:52:23,138 [Worker-26: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 09:52:23,149 [Worker-26: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 10:23:10,886 [Worker-27: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 10:23:10,906 [Worker-27: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 10:23:10,914 [Worker-27: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 10:30:28,867 [Worker-26: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 10:30:28,879 [Worker-26: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 10:30:28,888 [Worker-26: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 11:03:58,990 [Worker-31: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 11:03:59,001 [Worker-31: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 11:03:59,010 [Worker-31: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes

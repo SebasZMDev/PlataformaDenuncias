@@ -20,62 +20,58 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
 
-    private final UsuarioRepository usuarioRepository;
-    private final TokensRevocadosRepository tokenRepo;
-    private final PasswordEncoder passwordEncoder;
-    private final JwtUtils jwtUtils;
+	private final UsuarioRepository usuarioRepository;
+	private final TokensRevocadosRepository tokenRepo;
+	private final PasswordEncoder passwordEncoder;
+	private final JwtUtils jwtUtils;
 
-    @Override
-    public String registrar(AuthRegisterRequest req) {
+	@Override
+	public String registrar(AuthRegisterRequest req) {
 
-        if (usuarioRepository.existsByEmail(req.getEmail())) {
-            throw new BadRequestException("Ya existe un usuario con ese email");
-        }
+		if (usuarioRepository.existsByEmail(req.getEmail())) {
+			throw new BadRequestException("Ya existe un usuario con ese email");
+		}
 
-        Usuario usuario = new Usuario();
-        usuario.setNombre(req.getNombre());
-        usuario.setApellido(req.getApellido());
-        usuario.setEmail(req.getEmail());
-        usuario.setTelefono(req.getTelefono());
-        usuario.setPasswordHash(passwordEncoder.encode(req.getPassword()));
+		Usuario usuario = new Usuario();
+		usuario.setNombre(req.getNombre());
+		usuario.setApellido(req.getApellido());
+		usuario.setEmail(req.getEmail());
+		usuario.setTelefono(req.getTelefono());
+		usuario.setPasswordHash(passwordEncoder.encode(req.getPassword()));
 
-        usuarioRepository.save(usuario);
+		usuarioRepository.save(usuario);
 
-        return jwtUtils.generateToken(usuario.getEmail());
-    }
+	    return jwtUtils.generateToken(usuario.getEmail());
+	}
 
-    @Override
-    public String login(AuthLoginRequest req) {
+	@Override
+	public String login(AuthLoginRequest req) {
 
-        Usuario usuario = usuarioRepository.findByEmail(req.getEmail())
-                .orElseThrow(() -> new BadRequestException("Credenciales incorrectas"));
+		Usuario usuario = usuarioRepository.findByEmail(req.getEmail())
+				.orElseThrow(() -> new BadRequestException("Credenciales incorrectas o inexistentes"));
 
-        if (!passwordEncoder.matches(req.getPassword(), usuario.getPasswordHash())) {
-            throw new BadRequestException("Credenciales incorrectas");
-        }
+		if (!passwordEncoder.matches(req.getPassword(), usuario.getPasswordHash())) {
+			throw new BadRequestException("Credenciales incorrectas o inexistentes");
+		}
 
-        return jwtUtils.generateToken(usuario.getEmail());
-    }
+		return jwtUtils.generateToken(usuario.getEmail());
+	}
 
-    @Override
-    public void logout(String token) {
-        TokensRevocados t = new TokensRevocados();
-        t.setToken(token);
-        tokenRepo.save(t);
-    }
+	@Override
+	public void logout(String token) {
+		TokensRevocados t = new TokensRevocados();
+		t.setToken(token);
+		tokenRepo.save(t);
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-	    Usuario usuario = usuarioRepository.findByEmail(username)
-	            .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+		Usuario usuario = usuarioRepository.findByEmail(username)
+				.orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
-	    return org.springframework.security.core.userdetails.User.builder()
-	            .username(usuario.getEmail())
-	            .password(usuario.getPasswordHash())
-	            .authorities("USER")
-	            .build();
+		return org.springframework.security.core.userdetails.User.builder().username(usuario.getEmail())
+				.password(usuario.getPasswordHash()).authorities("USER").build();
 	}
-
 
 }
