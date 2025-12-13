@@ -1,41 +1,22 @@
 "use client";
 
 import RequireAuth from "@/components/auth/RequireAuth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import { api } from "@/lib/api";
-import { Usuario } from "@/types/user";
+import useAuthStore from "@/store/authStore";
+import dynamic from "next/dynamic";
+import { ArrowLeft } from "lucide-react";
+import ModalEvidencia from "@/components/denuncias/ModalEvidencia";
 
-const iconRetinaUrl =
-  "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png";
-const iconUrl =
-  "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png";
-const shadowUrl =
-  "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png";
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl,
-  iconUrl,
-  shadowUrl,
-});
-
-function ClickableMap({ lat, lng, setLat, setLng }: any) {
-  useMapEvents({
-    click(e) {
-      setLat(e.latlng.lat);
-      setLng(e.latlng.lng);
-    },
-  });
-
-  return lat && lng ? <Marker position={[lat, lng]} /> : null;
-}
+const MapaDenuncia = dynamic(
+  () => import("@/components/denuncias/MapaDenuncias"),
+  { ssr: false }
+);
 
 export default function NuevaDenunciaPage() {
   const router = useRouter();
-  const [usuario, setUsuario] = useState<Usuario | null>(null);
+  const { user } = useAuthStore();
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [categoria, setCategoria] = useState("");
@@ -44,71 +25,68 @@ export default function NuevaDenunciaPage() {
   const [lng, setLng] = useState<number | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isLoadingUser, setIsLoadingUser] = useState(true); // To handle loading state for user data
+  const [modalEvidenciaOpen, setModalEvidenciaOpen] = useState(false);
 
-  useEffect(() => {
-    const loadUser = async () => {
-      try {
-        console.log("🔹 Cargando usuario...");
-        const me = await api("/usuarios/me");
-        console.log("✅ Usuario cargado:", me);
-        setUsuario(me);
-      } catch (err) {
-        console.error("❌ Error al cargar usuario:", err);
-        router.push("/auth/login");
-      } finally {
-        setIsLoadingUser(false);
-      }
-    };
-    loadUser();
-  }, [router]);
+  const [evidencias, setEvidencias] = useState<
+    { titulo: string; url: string }[]
+  >([]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("🔹 Submit iniciado");
 
-    if (lat === null || lng === null) {
-      setError("Debes seleccionar una ubicación en el mapa");
-      console.log("❌ No hay ubicación seleccionada");
-      return;
-    }
 
-    setLoading(true);
-    setError("");
 
-    const body = {
-      titulo,
-      descripcion,
-      categoria,
-      anonimo,
-      ubicacion: lat && lng ? { lat, lng, direccion: "" } : null,
-    };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    console.log("🔹 Datos a enviar al backend:", body);
-    console.log("🔹 Usuario actual:", usuario);
+  if (lat === null || lng === null) {
+    setError("Debes seleccionar una ubicación en el mapa");
+    return;
+  }
 
-    try {
-      const response = await api(`/denuncias/usuario/${usuario?.id}`, {
-        method: "POST",
-        body: JSON.stringify(body),
-      });
-      console.log("✅ Respuesta del backend:", response);
-      router.push("/denuncias");
-    } catch (err: any) {
-      console.error("❌ Error al crear la denuncia:", err);
-      setError(err.response?.data?.message || "Error al crear la denuncia");
-    } finally {
-      setLoading(false);
-    }
+  setLoading(true);
+  setError("");
+
+  const body = {
+    titulo,
+    descripcion,
+    categoria,
+    anonimo,
+    ubicacion: { lat, lng, direccion: "" },
   };
 
-  if (isLoadingUser) {
-    return <div>Cargando usuario...</div>;
+  try {
+
+    const denuncia = await api(`/denuncias/usuario/${user?.id}`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+
+    for (const ev of evidencias) {
+      await api(
+        `/evidencias/denuncia/${denuncia.id}?tipo=${ev.titulo}&url=${encodeURIComponent(ev.url)}`,
+        { method: "POST" }
+      );
+    }
+
+
+    router.push("/denuncias");
+  } catch (err) {
+    setError("Error al crear la denuncia");
+  } finally {
+    setLoading(false);
   }
+};
+
 
   return (
     <RequireAuth>
       <div className="max-w-xl mx-auto p-4">
+        <button
+          onClick={() => router.push("/denuncias")}
+          className="flex items-center gap-2 text-blue-600 hover:underline mb-4"
+        >
+          <ArrowLeft size={20} />
+          Volver
+        </button>
         <h1 className="text-2xl font-bold mb-4">Nueva Denuncia</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
@@ -140,8 +118,11 @@ export default function NuevaDenunciaPage() {
               <option value="violencia">Violencia / Agresión</option>
               <option value="corrupcion">Corrupción</option>
               <option value="drogas">Tráfico de drogas</option>
+              <option value="medio_ambiente">Terrorismo</option>
               <option value="accidente">Accidente de tránsito</option>
-              <option value="medio_ambiente">Contaminación / Medio ambiente</option>
+              <option value="medio_ambiente">
+                Contaminación / Medio ambiente
+              </option>
               <option value="otros">Otros</option>
             </select>
           </label>
@@ -154,16 +135,27 @@ export default function NuevaDenunciaPage() {
             />
             Denunciar como anónimo
           </label>
+          {evidencias.length > 0 && (
+            <div className="text-sm text-gray-700">
+              <p className="font-medium">Evidencias adjuntas:</p>
+              <ul>
+                {evidencias.map((e, i) => (
+                  <li key={i}>• {e.titulo}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={() => setModalEvidenciaOpen(true)}
+            className="border border-blue-600 text-blue-600 px-3 py-2 rounded hover:bg-blue-50"
+          >
+            Adjuntar evidencia
+          </button>
 
           <div className="h-64">
-            <MapContainer
-              center={[-9.19, -75.0152]} // Centro aproximado de Perú
-              zoom={5}
-              style={{ height: "100%", width: "100%" }}
-            >
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <ClickableMap lat={lat} lng={lng} setLat={setLat} setLng={setLng} />
-            </MapContainer>
+            <MapaDenuncia lat={lat} lng={lng} setLat={setLat} setLng={setLng} />
           </div>
 
           {lat && lng && (
@@ -181,6 +173,14 @@ export default function NuevaDenunciaPage() {
             {loading ? "Enviando..." : "Crear Denuncia"}
           </button>
         </form>
+        {modalEvidenciaOpen && (
+          <ModalEvidencia
+            onClose={() => setModalEvidenciaOpen(false)}
+            onAdd={(titulo, url) =>
+              setEvidencias([...evidencias, { titulo, url }])
+            }
+          />
+        )}
       </div>
     </RequireAuth>
   );

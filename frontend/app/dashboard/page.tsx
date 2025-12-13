@@ -62,9 +62,9 @@ export default function Dashboard() {
             Bienvenido, {user?.nombre || "Usuario"} 👋
           </h2>
 
-          {/* Tarjetas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
+            <Card onClick={() => router.push("/denuncias")}
+            className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-lg font-semibold">Total denuncias</CardTitle>
                 <FileWarning size={26} className="text-blue-500" />
@@ -74,7 +74,8 @@ export default function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
+            <Card onClick={() => router.push("/denuncias/pendientes")}
+            className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-lg font-semibold">Pendientes</CardTitle>
                 <BarChart3 size={26} className="text-yellow-500" />
@@ -84,7 +85,8 @@ export default function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
+            <Card onClick={() => router.push("/denuncias/en-progreso")}
+            className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-lg font-semibold">En progreso</CardTitle>
                 <MapPinned size={26} className="text-orange-500" />
@@ -94,7 +96,8 @@ export default function Dashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
+            <Card onClick={() => router.push("/denuncias/finalizadas")}
+            className="bg-white dark:bg-zinc-800 shadow-md hover:shadow-lg transition-all cursor-pointer">
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-lg font-semibold">Finalizadas</CardTitle>
                 <User size={26} className="text-green-500" />

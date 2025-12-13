@@ -22,10 +22,8 @@ export const useAuthStore = create<AuthState>((set) => ({
   login: async (data) => {
     try {
       set({ loading: true, error: null });
-      // backend seteará cookie HttpOnly
       await api("/auth/login", { method: "POST", body: JSON.stringify(data) });
 
-      // ahora traer el usuario actual
       const me: Usuario = await api("/usuarios/me");
       set({ user: me });
     } catch (err: any) {

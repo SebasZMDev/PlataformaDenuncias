@@ -1,13 +1,13 @@
 "use client";
-import Link from "next/link";
 import TextType from "../components/ui/TextType";
 import BlurText from "../components/ui/BlurText";
-
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const handleAnimationComplete = () => {
     console.log("Animation completed!");
   };
+  const router = useRouter();
 
   return (
     <main className="bg-gray-850 min-h-screen flex flex-col justify-center items-center text-white px-4">
@@ -20,7 +20,6 @@ export default function HomePage() {
           onAnimationComplete={handleAnimationComplete}
           className="text-5xl font-bold"
         />
-        
       </div>
 
       <TextType
@@ -33,15 +32,17 @@ export default function HomePage() {
         pauseDuration={1500}
         showCursor={true}
         cursorCharacter="|"
-        className="text-2xl text-center max-w-2xl"
+        className="text-2xl text-center max-w-2xl relative overflow-hidden h-32"
       />
+
       <br />
-      <Link
-        href="/auth/login"
-        className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition"
+
+      <button
+        onClick={() => router.push("/dashboard")}
+        className="bg-transparent border-2 border-blue-600 text-blue-600 py-3 px-8 rounded-full text-lg font-semibold tracking-wider transition-all duration-300 transform hover:bg-blue-600 hover:text-white hover:scale-105 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
       >
-        Iniciar Sesión
-      </Link>
+        INGRESAR
+      </button>
     </main>
   );
 }
