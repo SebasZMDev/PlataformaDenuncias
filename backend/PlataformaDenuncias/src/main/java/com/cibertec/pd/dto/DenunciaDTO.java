@@ -12,9 +12,12 @@ public class DenunciaDTO {
     private String categoria;
     private String estado;
     private Boolean anonimo;
+    private UsuarioDTO usuario;
     private LocalDateTime creadoEn;
     private UbicacionDTO ubicacion;
     private List<EvidenciaDTO> evidencias;
+    
+    
 	public Long getId() {
 		return id;
 	}
@@ -68,6 +71,10 @@ public class DenunciaDTO {
 	}
 	public void setEvidencias(List<EvidenciaDTO> evidencias) {
 		this.evidencias = evidencias;
+	}
+	
+	public void setUsuario(UsuarioDTO usuario) {
+		this.usuario = usuario;
 	}
     
     

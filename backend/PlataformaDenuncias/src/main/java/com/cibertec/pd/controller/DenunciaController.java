@@ -21,6 +21,7 @@ public class DenunciaController {
     public ResponseEntity<DenunciaDTO> crear(@PathVariable Long usuarioId, @RequestBody DenunciaCreateRequest req) {
         return ResponseEntity.ok(denunciaService.crear(req, usuarioId));
     }
+    
 
     @GetMapping("/stats")
     public ResponseEntity<DenunciaStatsDTO> stats() {

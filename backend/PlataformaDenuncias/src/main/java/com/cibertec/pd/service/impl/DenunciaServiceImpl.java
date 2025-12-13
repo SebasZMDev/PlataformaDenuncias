@@ -72,9 +72,21 @@ public class DenunciaServiceImpl implements DenunciaService {
         denunciaRepo.save(denuncia);
     }
 
-	@Override
-	public DenunciaStatsDTO obtenerStats() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public DenunciaStatsDTO obtenerStats() {
+
+        long total = denunciaRepo.count();
+        long pendientes = denunciaRepo.countByEstado("pendiente");
+        long enProceso = denunciaRepo.countByEstado("en_progreso");
+        long finalizadas = denunciaRepo.countByEstado("finalizada");
+
+        DenunciaStatsDTO dto = new DenunciaStatsDTO();
+        dto.setTotal(total);
+        dto.setPendientes(pendientes);
+        dto.setEnProceso(enProceso);
+        dto.setResueltas(finalizadas);
+
+        return dto;
+    }
+
 }

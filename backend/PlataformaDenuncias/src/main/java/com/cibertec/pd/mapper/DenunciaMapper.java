@@ -3,6 +3,7 @@ package com.cibertec.pd.mapper;
 import com.cibertec.pd.dto.DenunciaCreateRequest;
 import com.cibertec.pd.dto.DenunciaDTO;
 import com.cibertec.pd.dto.UbicacionDTO;
+import com.cibertec.pd.dto.UsuarioDTO;
 import com.cibertec.pd.dto.EvidenciaDTO;
 import com.cibertec.pd.model.Denuncia;
 import com.cibertec.pd.model.Ubicacion;
@@ -13,9 +14,6 @@ import java.util.stream.Collectors;
 @Component
 public class DenunciaMapper {
 
-    // ------------------------ //
-    //     ENTITY → DTO         //
-    // ------------------------ //
     public DenunciaDTO toDTO(Denuncia denuncia) {
         DenunciaDTO dto = new DenunciaDTO();
         dto.setId(denuncia.getId());
@@ -26,6 +24,15 @@ public class DenunciaMapper {
         dto.setAnonimo(denuncia.getAnonimo());
         dto.setCreadoEn(denuncia.getCreadoEn());
 
+
+        if (!denuncia.getAnonimo() && denuncia.getUsuario() != null) {
+            UsuarioDTO u = new UsuarioDTO();
+            u.setId(denuncia.getUsuario().getId());
+            u.setNombre(denuncia.getUsuario().getNombre());
+            u.setApellido(denuncia.getUsuario().getApellido());
+            dto.setUsuario(u);
+        }
+        
         if (denuncia.getUbicacion() != null) {
             UbicacionDTO u = new UbicacionDTO();
             u.setLat(denuncia.getUbicacion().getLat());

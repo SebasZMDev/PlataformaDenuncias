@@ -53,23 +53,6 @@ public class JwtFilter extends OncePerRequestFilter {
             }
         }
 
-        // -----------------------------
-        // DEBUG COMPLETO
-        // -----------------------------
-        System.out.println("\n========= JWT DEBUG =========");
-        System.out.println("Request: " + request.getMethod() + " " + request.getRequestURI());
-        System.out.println("Authorization header: " + authHeader);
-
-        if (request.getCookies() != null) {
-            for (Cookie c : request.getCookies()) {
-                System.out.println("Cookie -> " + c.getName() + " = " + c.getValue());
-            }
-        } else {
-            System.out.println("Cookies: none");
-        }
-
-        System.out.println("Token seleccionado: [" + token + "]");
-        System.out.println("=============================\n");
 
 
         if (token == null || token.trim().isEmpty()) {

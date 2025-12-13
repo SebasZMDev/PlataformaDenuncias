@@ -2763,3 +2763,36 @@
 2025-12-11 11:03:58,990 [Worker-31: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-12-11 11:03:59,001 [Worker-31: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-12-11 11:03:59,010 [Worker-31: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 11:46:12,675 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-12-11 11:46:14,827 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-11 11:54:58,969 [Worker-29: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 11:54:59,100 [Worker-29: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 11:54:59,112 [Worker-29: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 18:18:47,216 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-12-11 18:18:50,504 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-11 22:38:47,700 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-12-11 22:41:50,231 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-11 22:41:56,191 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 22:41:56,219 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 22:41:56,230 [Worker-9: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-11 22:54:47,533 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-11 22:54:47,548 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-11 22:54:47,555 [Worker-10: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-12 08:51:55,761 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-12-12 08:51:59,351 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-12 09:12:13,199 [Worker-35: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-12 09:12:13,238 [Worker-35: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-12 09:12:13,250 [Worker-35: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-12 09:32:02,755 [Worker-45: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-12 09:32:02,770 [Worker-45: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-12 09:32:02,783 [Worker-45: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-12 09:52:16,922 [Worker-42: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-12 09:52:16,963 [Worker-42: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-12 09:52:16,975 [Worker-42: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-12 10:08:57,272 [Worker-47: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-12 10:08:57,285 [Worker-47: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-12 10:08:57,295 [Worker-47: Launching PlataformaDenuncias - PlataformaDenunciasApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-12-12 22:04:41,314 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-12-12 22:04:46,123 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started
+2025-12-13 10:24:38,403 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-12-13 10:24:41,295 [org.eclipse.jdt.internal.ui.text.JavaReconciler] INFO  o.hibernate.eclipse.HibernatePlugin - HibernatePlugin Started

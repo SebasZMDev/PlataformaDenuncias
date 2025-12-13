@@ -3,6 +3,7 @@ package com.cibertec.pd.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,11 +35,12 @@ public class Denuncia {
     @OneToOne(mappedBy = "denuncia", cascade = CascadeType.ALL)
     private Ubicacion ubicacion;
 
-    @OneToMany(mappedBy = "denuncia", cascade = CascadeType.ALL)
-    private List<DenunciaEvidencia> evidencias;
+    @OneToMany(mappedBy = "denuncia", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DenunciaEvidencia> evidencias = new ArrayList<>();
 
-    @OneToMany(mappedBy = "denuncia", cascade = CascadeType.ALL)
-    private List<Seguimiento> seguimientos;
+    @OneToMany(mappedBy = "denuncia", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Seguimiento> seguimientos = new ArrayList<>();
+
 
 	public Long getId() {
 		return id;
