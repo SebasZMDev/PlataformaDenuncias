@@ -89,4 +89,32 @@ public class DenunciaServiceImpl implements DenunciaService {
         return dto;
     }
 
+    
+    public DenunciaStatsDTO obtenerStatsUsuario(String email) {
+        Usuario usuario = usuarioRepo.findByEmail(email)
+            .orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado"));
+
+        long total = denunciaRepo.countByUsuarioId(usuario.getId());
+        long pendientes = denunciaRepo.countByUsuarioIdAndEstado(usuario.getId(), "pendiente");
+        long enProceso = denunciaRepo.countByUsuarioIdAndEstado(usuario.getId(), "en_progreso");
+        long finalizadas = denunciaRepo.countByUsuarioIdAndEstado(usuario.getId(), "finalizada");
+
+        DenunciaStatsDTO dto = new DenunciaStatsDTO();
+        dto.setTotal(total);
+        dto.setPendientes(pendientes);
+        dto.setEnProceso(enProceso);
+        dto.setResueltas(finalizadas);
+
+        return dto;
+    }
+
+    @Override
+    public List<DenunciaDTO> listarTodas() {
+        return denunciaRepo.findAll()
+            .stream()
+            .map(mapper::toDTO)
+            .toList();
+    }
+
+    
 }

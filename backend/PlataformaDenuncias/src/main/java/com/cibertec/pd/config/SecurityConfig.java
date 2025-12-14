@@ -32,10 +32,20 @@ public class SecurityConfig {
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                 	    .requestMatchers("/api/auth/**").permitAll()
-                	    .requestMatchers("/api/denuncias/public/**").permitAll()
-                	    .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
+                	    .requestMatchers(
+                	        "POST",
+                	        "/api/denuncias/**"
+                	    ).authenticated()
+                	    .requestMatchers(
+                	        "PUT",
+                	        "/api/denuncias/*/estado",
+                	        "/api/seguimientos/**",
+                	        "/api/denuncias/stats"
+                	    ).hasRole("POLICIA")
+
                 	    .anyRequest().authenticated()
                 	)
+
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

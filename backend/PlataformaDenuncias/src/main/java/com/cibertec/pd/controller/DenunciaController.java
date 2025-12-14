@@ -6,6 +6,7 @@ import com.cibertec.pd.dto.DenunciaStatsDTO;
 import com.cibertec.pd.service.DenunciaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,17 @@ public class DenunciaController {
     @GetMapping("/stats")
     public ResponseEntity<DenunciaStatsDTO> stats() {
         return ResponseEntity.ok(denunciaService.obtenerStats());
+    }
+
+    @GetMapping("/mis-stats")
+    public ResponseEntity<DenunciaStatsDTO> misStats(Authentication auth) {
+        String email = auth.getName();
+        return ResponseEntity.ok(denunciaService.obtenerStatsUsuario(email));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<DenunciaDTO>> listarTodas() {
+        return ResponseEntity.ok(denunciaService.listarTodas());
     }
 
     

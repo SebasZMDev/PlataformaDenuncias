@@ -15,6 +15,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -67,11 +71,20 @@ public class AuthServiceImpl implements AuthService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		Usuario usuario = usuarioRepository.findByEmail(username)
-				.orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+	    Usuario usuario = usuarioRepository.findByEmail(username)
+	            .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
-		return org.springframework.security.core.userdetails.User.builder().username(usuario.getEmail())
-				.password(usuario.getPasswordHash()).authorities("USER").build();
+	    var authorities = usuario.getRoles()
+	            .stream()
+	            .map(rol -> new SimpleGrantedAuthority("ROLE_" + rol.getNombre()))
+	            .toList();
+
+	    return org.springframework.security.core.userdetails.User.builder()
+	            .username(usuario.getEmail())
+	            .password(usuario.getPasswordHash())
+	            .authorities(authorities)
+	            .build();
 	}
+
 
 }

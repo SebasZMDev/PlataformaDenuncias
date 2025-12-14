@@ -17,5 +17,9 @@ public interface DenunciaService {
     void actualizarEstado(Long id, String estado);
     
     DenunciaStatsDTO obtenerStats();
+    
+    DenunciaStatsDTO obtenerStatsUsuario(String email);
+    
+    List<DenunciaDTO> listarTodas();
 
 }

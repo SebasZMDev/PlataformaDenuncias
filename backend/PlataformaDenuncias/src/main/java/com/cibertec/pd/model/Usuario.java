@@ -2,6 +2,8 @@ package com.cibertec.pd.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.HashSet;
 import java.util.Set;
 import java.time.LocalDateTime;
 
@@ -42,7 +44,8 @@ public class Usuario {
         joinColumns = @JoinColumn(name = "usuario_id"),
         inverseJoinColumns = @JoinColumn(name = "rol_id")
     )
-    private Set<Rol> roles;
+    private Set<Rol> roles = new HashSet<>();
+
 
 	public Long getId() {
 		return id;

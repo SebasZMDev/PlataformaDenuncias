@@ -15,4 +15,7 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     
     long countByEstado(String estado);
 
+    long countByUsuarioId(Long usuarioId);
+    long countByUsuarioIdAndEstado(Long usuarioId, String estado);
+
 }
