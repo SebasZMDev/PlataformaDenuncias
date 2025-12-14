@@ -10,8 +10,8 @@ import java.util.Date;
 @Component
 public class JwtUtils {
 
-    private final String SECRET = "esta_es_una_clave_muy_segura_y_larga_123456789";
-    private final long EXPIRATION = 1000 * 60 * 60 * 4; // 4 horas
+    private final String SECRET = "wwww_22_zzz_clave_832_segura_y_l4rga_1533656789";
+    private final long EXPIRATION = 1000 * 60 * 60 * 4;
 
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET.getBytes());

@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [stats, setStats] = useState({
     total: 0,
     pendientes: 0,
-    enProgreso: 0,
+    enProceso: 0,
     finalizadas: 0,
   });
 
@@ -23,14 +23,15 @@ export default function Dashboard() {
     const loadStats = async () => {
       try {
         const data = await api("/denuncias/mis-stats");
+        console.log(data)
         setStats({
           total: data?.total ?? 0,
           pendientes: data?.pendientes ?? 0,
-          enProgreso: data?.enProgreso ?? 0,
+          enProceso: data?.enProceso ?? 0,
           finalizadas: data?.finalizadas ?? 0,
         });
       } catch {
-        setStats({ total: 0, pendientes: 0, enProgreso: 0, finalizadas: 0 });
+        setStats({ total: 0, pendientes: 0, enProceso: 0, finalizadas: 0 });
       }
     };
 
@@ -116,7 +117,7 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold text-orange-600">
-                  {stats.enProgreso}
+                  {stats.enProceso}
                 </p>
               </CardContent>
             </Card>
