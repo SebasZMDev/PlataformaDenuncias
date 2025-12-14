@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { api } from "@/lib/api";
 import RequireAuth from "@/components/auth/RequireAuth";
 import dynamic from "next/dynamic";
@@ -9,6 +9,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { MapPin, Clock, User2 } from "lucide-react";
 import VolverButton from "@/components/ui/BackBtn";
 import ModalImagen from "@/components/denuncias/ModalImagen";
+import useAuthStore from "@/store/authStore";
 
 const MapaDenuncia = dynamic(
   () => import("@/components/denuncias/MapaDenuncias"),
@@ -17,13 +18,17 @@ const MapaDenuncia = dynamic(
 
 export default function DenunciaDetallePage() {
   const { id } = useParams();
-  const router = useRouter();
+  const { user } = useAuthStore();
+  const esPolicia = user?.roles?.includes("POLICIA");
   const [imagenSeleccionada, setImagenSeleccionada] = useState<string | null>(
     null
   );
   const [evidencias, setEvidencias] = useState<any[]>([]);
   const [denuncia, setDenuncia] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+
+
 
   const isImg = (titulo: string) => titulo?.toLowerCase().startsWith("img");
 
@@ -107,6 +112,40 @@ export default function DenunciaDetallePage() {
                 {estado?.toUpperCase()}
               </span>
             </div>
+
+{esPolicia && (
+  <div className="mt-4">
+    <label className="block text-sm font-semibold mb-2">
+      Cambiar estado
+    </label>
+
+    <select
+      value={estado}
+      onChange={async (e) => {
+        const nuevoEstado = e.target.value;
+
+        try {
+          await api(`/denuncias/${id}/estado?estado=${nuevoEstado}`, {
+            method: "PUT",
+          });
+
+          setDenuncia((prev: any) => ({
+            ...prev,
+            estado: nuevoEstado,
+          }));
+        } catch (err) {
+          console.error("Error cambiando estado", err);
+        }
+      }}
+      className="border rounded-lg px-3 py-2 bg-white"
+    >
+      <option value="PENDIENTE">Pendiente</option>
+      <option value="EN_PROGRESO">En progreso</option>
+      <option value="FINALIZADA">Finalizada</option>
+    </select>
+  </div>
+)}
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex items-center gap-3 bg-slate-50 p-3 rounded-xl">

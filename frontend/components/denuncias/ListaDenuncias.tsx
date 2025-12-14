@@ -15,24 +15,33 @@ export default function ListaDenuncias({ filtro }: { filtro?: string }) {
   useEffect(() => {
     if (!user?.id) return;
 
-    const fetchDenuncias = async () => {
-      try {
-        const data = await api(`/denuncias/usuario/${user.id}`);
+const fetchDenuncias = async () => {
+  try {
+    let data;
 
-        const filtradas =
-          filtro === "TODAS"
-            ? data
-            : data.filter(
-                (d: any) => d.estado?.toLowerCase() === filtro?.toLowerCase()
-              );
+    if (user?.roles?.includes("POLICIA")) {
+      // 👮 Policía ve TODAS
+      data = await api("/denuncias");
+    } else {
+      // 👤 Civil ve solo las suyas
+      data = await api(`/denuncias/usuario/${user.id}`);
+    }
 
-        setDenuncias(filtradas);
-      } catch (err) {
-        console.error("Error cargando denuncias", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+    const filtradas =
+      !filtro || filtro === "TODAS"
+        ? data
+        : data.filter(
+            (d: any) => d.estado?.toLowerCase() === filtro.toLowerCase()
+          );
+
+    setDenuncias(filtradas);
+  } catch (err) {
+    console.error("Error cargando denuncias", err);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
     fetchDenuncias();
   }, [user, filtro]);
