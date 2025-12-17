@@ -19,8 +19,8 @@ export default function DashboardRedirect() {
     }
   }, [user]);
 
-  return 
+  return (
   <RequireAuth>
-    <div></div>
-  </RequireAuth>;
+    <div/>
+  </RequireAuth>)
 }

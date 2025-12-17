@@ -41,7 +41,7 @@ function MapaDenuncia({
     <MapContainer
       center={[-9.19, -75.0152]}
       zoom={5}
-      style={{ height: "100%", width: "100%" }}
+      style={{ height: "100%", width: "100%", zIndex: 5}}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

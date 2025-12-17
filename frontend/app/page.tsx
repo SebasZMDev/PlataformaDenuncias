@@ -38,7 +38,7 @@ export default function HomePage() {
       <br />
 
       <button
-        onClick={() => router.push("/dashboard")}
+        onClick={() => router.push("/auth/login")}
         className="bg-transparent border-2 border-blue-600 text-blue-600 py-3 px-8 rounded-full text-lg font-semibold tracking-wider transition-all duration-300 transform hover:bg-blue-600 hover:text-white hover:scale-105 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
       >
         INGRESAR
